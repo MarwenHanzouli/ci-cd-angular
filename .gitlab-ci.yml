@@ -27,5 +27,5 @@ deploy_production:
     - npm install
     - ./node_modules/@angular/cli/bin/ng test --progress false --watch=false
     - ./node_modules/@angular/cli/bin/ng e2e
-    - ./node_modules/@angular/cli/bin/ng build --progress false --prod --base-href ci-cd-stage.sh
-    - ./node_modules/.bin/surge -p dist/ --domain ci-cd-stage.sh
+    - ./node_modules/@angular/cli/bin/ng build --progress false --prod --base-href ci-cd.surge.sh
+    - ./node_modules/.bin/surge -p dist/ --domain ci-cd.surge.sh
