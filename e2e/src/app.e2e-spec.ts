@@ -12,7 +12,21 @@ describe('workspace-project App', () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual('ci-cd-angular app is running!');
   });
+  it('should click three times and reset with matching points', () => {
+    page.navigateTo();
 
+    expect(page.getPoints()).toBe('1');
+
+    page.getPlus1Button().click();
+    page.getPlus1Button().click();
+    page.getPlus1Button().click();
+
+    expect(page.getPoints()).toBe('4');
+
+    page.getResetButton().click();
+
+    expect(page.getPoints()).toBe('0');
+  });
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

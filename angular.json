@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ci-cd-angular"
+    }
+  },
+  "defaultProject": "ci-cd-angular",
+  "cli": {
+    "analytics": false
+  }
 }
