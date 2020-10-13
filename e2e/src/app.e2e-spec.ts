@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ci-cd-angular app is running!');
+    expect(page.getTitleText()).toEqual('Letslearn');
   });
   it('should click three times and reset with matching points', () => {
     page.navigateTo();
