@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Letslearn';
-  private x=5;
   points = 1;
 
   plus1() {
