@@ -12,6 +12,7 @@ deploy_stage:
   script:
     - rm ./package-lock.json
     - npm install
+    - ./node_modules/@angular/cli/bin/ng lint
     - ./node_modules/@angular/cli/bin/ng test --progress false --watch=false
     - ./node_modules/@angular/cli/bin/ng e2e
     - ./node_modules/@angular/cli/bin/ng build --progress false --prod --base-href ci-cd-stage.sh
@@ -25,6 +26,7 @@ deploy_production:
   script:
     - rm ./package-lock.json
     - npm install
+    - ./node_modules/@angular/cli/bin/ng lint
     - ./node_modules/@angular/cli/bin/ng test --progress false --watch=false
     - ./node_modules/@angular/cli/bin/ng e2e
     - ./node_modules/@angular/cli/bin/ng build --progress false --prod --base-href ci-cd.surge.sh

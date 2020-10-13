@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
@@ -8,15 +8,15 @@ export class AppPage {
   getTitleText(): Promise<string> {
     return element(by.css('h1')).getText() as Promise<string>;
   }
-  getPoints() {
-    return element(by.cssContainingText('div', 'Points')).$('span').getText();
+  getPoints(): Promise<string> {
+    return element(by.cssContainingText('div', 'Points')).$('span').getText() as Promise<string>;
   }
 
-  getPlus1Button() {
-    return element(by.cssContainingText('button', 'Plus 1'));
+  getPlus1Button(): ElementFinder {
+    return element(by.cssContainingText('button', 'Plus 1')) ;
   }
 
-  getResetButton() {
+  getResetButton(): ElementFinder {
     return element(by.cssContainingText('button', 'Reset'));
   }
 }
