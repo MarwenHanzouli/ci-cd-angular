@@ -29,9 +29,11 @@ jobs:
       # - name: Lint
       #   run: npm run lint
       - name: Unit tests
-        run: npm run test:ci
+        #run: npm run test:ci
+        run: npm run test --watch=true --progress=true
       - name: E2E
-        run: npm run e2e:ci
+        #run: npm run e2e:ci
+        run: npm run e2e
       - name: Build app
         run: npm run build:prod
       - name: Inject slug/short variables
@@ -39,8 +41,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ng9-github-actions-netlify-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
-          path: ./dist/ng9-github-actions-netlify
+          name: ci-cd-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
+          path: ./dist/ci-cd-angular
 
   deploy:
     needs: build
@@ -52,7 +54,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: ng9-github-actions-netlify-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
+          name: ci-cd-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
           path: './build'
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
