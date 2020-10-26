@@ -10,7 +10,8 @@
     "build:prod": "ng build --prod",
     "e2e:ci": "ng e2e -c=ci",
     "test:ci": "ng test -c=ci",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "webdriver-manager update --standalone false --gecko false"
   },
   "private": true,
   "dependencies": {
