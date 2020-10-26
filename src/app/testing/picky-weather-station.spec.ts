@@ -20,17 +20,17 @@ describe('PickyWeatherStation', () => {
     it('should control time', fakeAsync(() => {
 
         let value;
-    
+
         setTimeout(() => value = 'VALUE', 1000);
-    
+
         tick(999);
-    
+
         expect(value).toEqual(undefined);
-    
+
         tick(1000);
-    
+
         expect(value).toEqual('VALUE');
-    
+
     }));
 
 });

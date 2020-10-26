@@ -13,9 +13,9 @@ describe('FirstService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  it('should return a right value',fakeAsync(()=>{
+  it('should return a right value', fakeAsync(() => {
     let tempExpected;
-    service.getTemperature("Tunis").subscribe(temp=>{tempExpected=temp});
+    service.getTemperature('Tunis').subscribe(temp => {tempExpected = temp; });
     tick(3005);
     expect(tempExpected).toEqual(25);
   }));

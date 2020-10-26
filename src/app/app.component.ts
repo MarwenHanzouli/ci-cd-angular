@@ -7,13 +7,17 @@ import { FirstService } from './services/first.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  constructor(private firstService:FirstService){}
-  ngOnInit(): void {
-    this.firstService.getTemperature("Tunis").subscribe(val=>console.log(val))
-  }
 
   title = 'Letslearn';
   points = 1;
+
+  constructor(private firstService: FirstService){}
+
+  ngOnInit(): void {
+    this.firstService.getTemperature('Tunis').subscribe(val => {
+      return console.log(val);
+    });
+  }
 
   plus1(): void {
     this.points++;
