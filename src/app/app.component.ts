@@ -20,7 +20,16 @@ export class AppComponent implements OnInit{
   }
 
   plus1(): void {
-    this.points++;
+    if (5 === 5){
+      this.points++;
+    }
+    else {
+      console.log('this bloc is for testing statement coverage');
+      console.log('yessssssssss');
+      console.log('calculate');
+      console.log('coverage');
+      console.log('statement');
+    }
   }
 
   reset(): void {
