@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
       console.log('coverage');
       console.log('statement');
       console.log('add line');
+      return;
     }
   }
 
